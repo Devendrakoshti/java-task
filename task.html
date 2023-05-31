@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .main {
+            height: 600px;
+            width: 50%;
+            background-color: blueviolet;
+            display: flex;
+            overflow: hidden;
+        }
+        
+        .main .part1 {
+            width: 50%;
+            background-color: aqua;
+            line-height: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            border: 2px solid #000;
+        }
+        
+        .main .part2 {
+            width: 50%;
+            background-color: chartreuse;
+        }
+        
+        .main .part3 {
+            width: 103%;
+            height: 350px;
+            background-color: cadetblue;
+            border: 2px solid #000;
+            position: absolute;
+            top: 0;
+            left: 210%;
+            transition: 1s;
+        }
+        
+        .main .part4 {
+            width: 103%;
+            height: 350px;
+            background-color: brown;
+            border: 2px solid #000;
+            position: absolute;
+            top: -52px;
+            left: 210%;
+            transition: 1s;
+        }
+        /* .main .part1 .tex1:hover .part3 {
+            left: 100%;
+        }
+        
+        .main .part1 .tex2:hover .part4 {
+            left: 100%;
+        } */
+        
+        .main .part1 .tex1 {
+            height: 50px;
+            width: 100%;
+            background-color: deeppink;
+            border: 2px solid #000;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .main .part1 .tex2 {
+            height: 50px;
+            width: 100%;
+            background-color: deeppink;
+            border: 2px solid #000;
+            position: relative;
+        }
+        
+        .main .part1 .tex3 {
+            height: 50px;
+            width: 100%;
+            border: 2px solid #000;
+            background-color: deeppink;
+        }
+        
+        .hide,
+        .show {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .d1,
+        .d2 {
+            padding: 2px 10px;
+            background-color: cornflowerblue;
+        }
+        
+        .hide {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="part1">
+            <div class="tex1">
+                Questions1 <button class="d1" onclick="dev()">open</button>
+                <div class="part3">Questions1</div>
+            </div>
+            <div class="tex2">
+                <div class="show">
+                    Questions2<button class="d2" onclick="dev1()">open</button>
+                    <div class="part4">Questions2</div>
+                </div>
+
+            </div>
+            <div class="tex3">
+                <div class="hide">
+                    Questions2<button class="d2" onclick="dev1()">open</button>
+                    <div class="part4">Questions2</div>
+                </div>
+            </div>
+        </div>
+        <div class="part2">
+        </div>
+    </div>
+    <script>
+        g1 = document.querySelector(".tex1")
+        b1 = document.querySelector(".part3")
+        g2 = document.querySelector(".tex2")
+        b2 = document.querySelector(".part4")
+        b3 = document.querySelector(".d1")
+        b2 = document.querySelector(".part4")
+        show = document.querySelector(".show")
+        hide = document.querySelector(".hide")
+
+
+
+        console.log(b1)
+
+        function dev() {
+            b1.style.left = "100%"
+            b2.style.left = "210%"
+            show.style.visibility = "hidden"
+            hide.style.visibility = "visible"
+
+
+
+        }
+
+        function dev1() {
+            b2.style.left = "100%"
+            b1.style.left = "210%"
+            show.style.visibility = "visible"
+            hide.style.visibility = "hidden"
+
+
+
+
+        }
+    </script>
+
+
+</body>
+
+</html>
